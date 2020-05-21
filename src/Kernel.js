@@ -13,7 +13,7 @@ var Terminal = (function() {
 	function Terminal() {
 		this._ = private();
 		this._(key).Canvas = document.createElement("canvas");
-		this._(key).ctx = Canvas.getContext("2d");
+		this._(key).ctx = this._(key).Canvas.getContext("2d");
 		
 		this.bgColor = 0;
 		this.fgColor = 0;
