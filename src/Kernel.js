@@ -15,6 +15,8 @@ var Terminal = (function() {
 		this._(key).Canvas = document.createElement("canvas");
 		this._(key).ctx = this._(key).Canvas.getContext("2d");
 		
+		document.body.appendChild(this._(key).Canvas);
+		
 		this.bgColor = 0;
 		this.fgColor = 0;
 		this.font = "monospace";
