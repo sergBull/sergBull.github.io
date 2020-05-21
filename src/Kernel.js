@@ -2,6 +2,8 @@ var Terminal = (function() {
 	var Canvas = document.createElement("canvas");
 	var ctx = Canvas.getContext("2d");
 	
+	document.body.appendChild(Canvas);
+	
 	function Terminal() {
 		this.bgColor = 0;
 		this.fgColor = 0;
@@ -10,15 +12,15 @@ var Terminal = (function() {
 		this.width = 0;
 	}
 	
-	Terminal.prototype.init = function(w, h) {
-		Canvas.height = h;
-		Canvas.width = w;
-		
-		ctx.fillRect(0, 0, w, h);
-		
-		this.height = h;
-		this.width = w;
-	};
-	
 	return Terminal;
 });
+
+Terminal.prototype.init = function(w, h) {
+	Canvas.height = h;
+	Canvas.width = w;
+	
+	ctx.fillRect(0, 0, w, h);
+	
+	this.height = h;
+	this.width = w;
+};
