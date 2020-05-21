@@ -12,15 +12,9 @@ var Terminal = (function() {
 		this.width = 0;
 	}
 	
+	Terminal.prototype.init = function(w, h) {
+		alert(w * h);
+	};
+	
 	return Terminal;
 });
-
-Terminal.prototype.init = function(w, h) {
-	Canvas.height = h;
-	Canvas.width = w;
-	
-	ctx.fillRect(0, 0, w, h);
-	
-	this.height = h;
-	this.width = w;
-};
