@@ -15,6 +15,9 @@ var Terminal = (function() {
 		Canvas.width = w;
 		
 		ctx.fillRect(0, 0, w, h);
+		
+		this.height = h;
+		this.width = w;
 	};
 	
 	return Terminal;
