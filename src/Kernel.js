@@ -26,11 +26,11 @@ var Terminal = (function() {
 		this.height = h;
 		this.width = w;
 		
-		var Canvas = this._(key).Canvas;
+		var canvas = this._(key).Canvas;
 		var ctx = this._(key).ctx;
 		
-		Canvas.height = this.height;
-		Canvas.width = this.width;
+		canvas.height = this.height;
+		canvas.width = this.width;
 		
 		ctx.fillRect(0, 0, this.width, this.height);
 	};
