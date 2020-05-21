@@ -1,8 +1,14 @@
-var Terminal = (function() {
-	var Canvas = document.createElement("canvas");
-	var ctx = Canvas.getContext("2d");
+var Terminal = function() {
+	var key = {};
 	
-	document.body.appendChild(Canvas);
+	var private = function() {
+		var obj = {};
+		
+		return function(testkey) {
+			if (key === testkey) return obj;
+			return undefined;
+		}
+	};
 	
 	function Terminal() {
 		this.bgColor = 0;
@@ -17,4 +23,4 @@ var Terminal = (function() {
 	};
 	
 	return Terminal;
-});
+};
