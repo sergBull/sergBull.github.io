@@ -13,6 +13,7 @@ var Terminal = (function() {
 	function Terminal() {
 		this._ = private();
 		this._(key).Canvas = document.createElement("canvas");
+		this._(key).ctx = Canvas.getContext("2d");
 		
 		this.bgColor = 0;
 		this.fgColor = 0;
@@ -22,7 +23,16 @@ var Terminal = (function() {
 	}
 	
 	Terminal.prototype.init = function(w, h) {
-		alert(w * h);
+		this.height = h;
+		this.width = w;
+		
+		var Canvas = this._(key).Canvas;
+		var ctx = this._(key).ctx;
+		
+		Canvas.height = this.height;
+		Canvas.width = this.width;
+		
+		ctx.fillRect(0, 0, this.width, this.height);
 	};
 	
 	return Terminal;
