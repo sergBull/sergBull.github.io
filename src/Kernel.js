@@ -1,4 +1,4 @@
-var Terminal = function() {
+var Terminal = (function() {
 	var key = {};
 	
 	var private = function() {
@@ -11,6 +11,9 @@ var Terminal = function() {
 	};
 	
 	function Terminal() {
+		this._ = private();
+		this._(key).Canvas = document.createElement("canvas");
+		
 		this.bgColor = 0;
 		this.fgColor = 0;
 		this.font = "monospace";
@@ -23,4 +26,4 @@ var Terminal = function() {
 	};
 	
 	return Terminal;
-};
+})();
