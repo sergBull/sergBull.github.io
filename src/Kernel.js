@@ -37,5 +37,23 @@ var Terminal = (function() {
 		ctx.fillRect(0, 0, this.width, this.height);
 	};
 	
+	Terminal.prototype.setBackgroundColor = function(color) {
+		if (typeof color === "Number") {
+			var r = (color >> 16) & 0xFF;
+			var g = (color >> 8) & 0xFF;
+			var b = color & 0xFF;
+			
+			this._(key).ctx.fillStyle = "rgb(" + [ r, g, b ].join(", ") + ")";
+		} else {
+			if (typeof color === "Object") {
+				this._(key).ctx.fillStyle = "rgb(" + [ color.r, color.g, color.b ].join(", ") + ")";
+			} else {
+				console.log("Wrong color: use HexadecimalInteger (0xFF00FF) or Vec3 (255, 255, 255)");
+			}
+		}
+		
+		this._(key).ctx.fillRect(0, 0, this.width, this.height);
+	};
+	
 	return Terminal;
 })();
